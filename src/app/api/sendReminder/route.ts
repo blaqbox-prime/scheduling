@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-function GET(request: NextRequest): NextResponse{
+export async function GET(request: NextRequest){
 
     console.log("This was executed by Cron Job");
 
