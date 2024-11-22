@@ -2,7 +2,7 @@
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useState } from "react";
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { format } from 'date-fns'
 import { scheduleBookingReminder } from "@/services/bookingService";
 
 
@@ -31,7 +31,7 @@ export default function Home() {
           <li className="mb-2">
            Pick a date to schedule an email.
           </li>
-          <li>Click the "Schedule".</li>
+          <li>Click the Schedule.</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">

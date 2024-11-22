@@ -4,6 +4,8 @@ export async function GET(request: NextRequest){
 
     console.log("This was executed by Cron Job");
 
+    console.log(request)
+
     return NextResponse.json({
         message: "Success"
     })
