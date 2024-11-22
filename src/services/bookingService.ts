@@ -8,13 +8,14 @@ const scheduleBookingReminder = async (date: Date) => {
         'Authorization': `Bearer ${CRON_KEY}`
     }
 
+    const BASE_URL = "https://scheduling-5tu1.vercel.app"
     // Calculate the time 10 minutes from now 
     const currentTime = new Date(); 
     const runTime = new Date(currentTime.getTime() + 2 * 60000).toISOString();
     
     const JOB = {
         name: "Booking Reminder",
-        url: 'http://localhost:3000/api/sendReminder',
+        url: `${BASE_URL}/sendReminder`,
         enabled: true,
         saveResponses: true,
         schedule: {
@@ -25,7 +26,7 @@ const scheduleBookingReminder = async (date: Date) => {
     }
 
     const response = await fetch(ENDPOINT, {
-        method: 'PUT',
+        method: 'POST',
         headers: HEADERS,
         body: JSON.stringify(JOB)
     })
@@ -34,8 +35,8 @@ const scheduleBookingReminder = async (date: Date) => {
         console.log('Job Scheduled')
     }
     else {
-        const data = await response.json();
-        console.log(data);
+        console.log('Job Failed');
+        console.log(response)
     }
 
 }

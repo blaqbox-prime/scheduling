@@ -7,6 +7,6 @@ export async function GET(request: NextRequest){
     console.log(request)
 
     return NextResponse.json({
-        message: "Success"
+        message: "Success | Cron did its thing"
     })
 }
