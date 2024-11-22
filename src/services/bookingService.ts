@@ -2,7 +2,7 @@ const scheduleBookingReminder = async (date: Date) => {
     console.log(date);
 
     const CRON_KEY: string = 'QTlnZIAzFv8RZR6RwlBs+RITEGkhzxKqUZRyme6dRGI='
-    const ENDPOINT: string = 'https://api.cron-job.org/jobs'
+    const ENDPOINT: string = 'https://api.cron-job.org/'
     const HEADERS = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${CRON_KEY}`
